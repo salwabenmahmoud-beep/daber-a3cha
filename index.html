@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دَبّر عشانا</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 50px;
+        }
+        h1 { color: #2c3e50; }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #219150; }
+        #recipe {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🍳 دَبّر عشانا</h1>
+    <p>محتار ماذا تتناول الليلة؟ اضغط على الزر واقترح عليك وجبة!</p>
+
+    <button onclick="suggestDinner()">اقترح وجبة عشاء</button>
+
+    <div id="recipe"></div>
+
+    <script>
+        const dinners = [
+            "عجة بيض بالخضار والجبن 🍳",
+            "سندويش تونة بالذرة والميونيز 🥪",
+            "معكرونة بالصلصة الحمراء والريحان 🍝",
+            "سلطة دافئة مع حمص محمص 🥗",
+            "بيتزا سريعة بخبز التوست 🍕"
+        ];
+
+        function suggestDinner() {
+            const randomIndex = Math.floor(Math.random() * dinners.length);
+            document.getElementById('recipe').innerText = dinners[randomIndex];
+        }
+    </script>
+</body>
+</html>
